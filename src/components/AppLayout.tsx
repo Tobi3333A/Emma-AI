@@ -3,13 +3,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import {
-  LayoutDashboard, Search, TrendingUp, Shield, Settings, LogOut, ChevronRight, Menu, X
+  LayoutDashboard, Search, FileCode2, TrendingUp, Shield, Settings, LogOut, ChevronRight, Menu, X
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
   { icon: Search, label: "Run Query", path: "/monitor" },
+  { icon: FileCode2, label: "Generate Site", path: "/generate" },
   { icon: TrendingUp, label: "Optimization", path: "/optimize" },
   { icon: Shield, label: "Ethics Monitor", path: "/ethics" },
   { icon: Settings, label: "Settings", path: "/settings" },
@@ -58,7 +59,26 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         ))}
       </nav>
 
-      <div className="p-3 border-t border-sidebar-border">
+      <div className="p-3 border-t border-sidebar-border space-y-3">
+        <div>
+          <div className="text-xs font-semibold text-muted-foreground mb-2 px-3">Links</div>
+          <div className="space-y-0.5">
+            <Link
+              to="/"
+              onClick={() => setMobileOpen(false)}
+              className="nav-item block"
+            >
+              <span>Home</span>
+            </Link>
+            <Link
+              to="/blog"
+              onClick={() => setMobileOpen(false)}
+              className="nav-item block"
+            >
+              <span>Blog</span>
+            </Link>
+          </div>
+        </div>
         <div className="rounded-lg bg-secondary/50 p-3 mb-3">
           <div className="text-xs text-muted-foreground mb-1">Signed in as</div>
           <div className="text-xs font-medium text-foreground truncate">{user?.email}</div>

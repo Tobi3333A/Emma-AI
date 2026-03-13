@@ -31,7 +31,6 @@ export default function MarketingNav() {
               Blog
             </Button>
           </Link>
-
           {user ? (
             <Button onClick={() => navigate("/dashboard")} className="btn-teal text-sm">
               Go to Dashboard
