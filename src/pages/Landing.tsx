@@ -199,14 +199,14 @@ export default function Landing() {
               See exactly how your products appear across every major AI model — side by side.
             </p>
           </div>
-          <div className="rounded-2xl border border-border overflow-hidden shadow-glow">
+          {/* <div className="rounded-2xl border border-border overflow-hidden shadow-glow">
             <img
               src={heroDashboard}
               alt="EmmaAI Dashboard — multi-model AI monitoring interface"
               className="w-full object-cover"
               loading="lazy"
             />
-          </div>
+          </div> */}
         </div>
       </section>
 

@@ -26,11 +26,11 @@ app.post("/summarize", async (req, res) => {
       messages: [
         {
           role: "system",
-          content: "You summarize text clearly and concisely.",
+          content: "You optimize this code for AIO (AI Optimization) for better AI crawling and indexing.",
         },
         {
           role: "user",
-          content: `Summarize this text:\n\n${text}`,
+          content: `Optimize this code for better AI crawling and indexing:\n\n${text}`,
         },
       ],
     });
