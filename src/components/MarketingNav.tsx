@@ -31,22 +31,16 @@ export default function MarketingNav() {
               Blog
             </Button>
           </Link>
-          {user ? (
-            <Button onClick={() => navigate("/dashboard")} className="btn-teal text-sm">
-              Go to Dashboard
-            </Button>
-          ) : (
             <>
               <Link to="/login">
                 <Button variant="ghost" className="text-muted-foreground hover:text-foreground text-sm">
                   Sign In
                 </Button>
               </Link>
-              <Link to="/signup">
-                <Button className="btn-teal text-sm">Get Started Free</Button>
+              <Link to="/pricing">
+                <Button className="btn-teal text-sm">Get Started</Button>
               </Link>
             </>
-          )}
         </div>
       </div>
     </nav>
