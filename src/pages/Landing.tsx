@@ -4,6 +4,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { useAuth } from "@/contexts/AuthContext";
 import { Send } from "lucide-react";
 import heroDashboard from "@/assets/hero-dashboard.png";
+import MarketingNav from "@/components/MarketingNav";
+import MarketingFooter from "@/components/MarketingFooter";
 
 const features = [
   {
@@ -67,35 +69,7 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
-      {/* Nav */}
-      <nav className="fixed top-0 inset-x-0 z-50 border-b border-border/40 backdrop-blur-md bg-background/80">
-        <div className="container flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-teal flex items-center justify-center text-background font-bold text-sm font-mono">
-              E
-            </div>
-            <span className="font-display font-bold text-lg text-foreground">EmmaAI</span>
-          </div>
-          <div className="flex items-center gap-3">
-            {user ? (
-              <Button onClick={() => navigate("/dashboard")} className="btn-teal text-sm">
-                Go to Dashboard
-              </Button>
-            ) : (
-              <>
-                <Link to="/login">
-                  <Button variant="ghost" className="text-muted-foreground hover:text-foreground text-sm">
-                    Sign In
-                  </Button>
-                </Link>
-                <Link to="/signup">
-                  <Button className="btn-teal text-sm">Get Started Free</Button>
-                </Link>
-              </>
-            )}
-          </div>
-        </div>
-      </nav>
+      <MarketingNav />
 
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
@@ -259,18 +233,7 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-8">
-        <div className="container flex items-center justify-between text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded bg-gradient-teal flex items-center justify-center text-background text-xs font-bold font-mono">
-              E
-            </div>
-            <span className="font-display font-semibold text-foreground">EmmaAI</span>
-          </div>
-          <p>© 2026 EmmaAI. Powering AI visibility for the modern enterprise.</p>
-        </div>
-      </footer>
+      <MarketingFooter />
     </div>
   );
 }
