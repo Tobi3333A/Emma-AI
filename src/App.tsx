@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider, useAuth } from "@/contexts/AuthContext";
 import Landing from "./pages/Landing";
+import Pricing from "./pages/Pricing";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Onboarding from "./pages/Onboarding";
@@ -13,6 +14,7 @@ import Monitor from "./pages/Monitor";
 import Generate from "./pages/Generate";
 import Optimize from "./pages/Optimize";
 import Ethics from "./pages/Ethics";
+import Joir from "./pages/Joir";
 import AppSettings from "./pages/AppSettings";
 import NotFound from "./pages/NotFound";
 import BlogIndex from "./pages/BlogIndex";
@@ -34,6 +36,7 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
 const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Landing />} />
+    <Route path="/pricing" element={<Pricing />} />
     <Route path="/blog" element={<BlogIndex />} />
     <Route path="/blog/:slug" element={<BlogPost />} />
     <Route path="/login" element={<Login />} />
@@ -44,6 +47,7 @@ const AppRoutes = () => (
     <Route path="/generate" element={<ProtectedRoute><Generate /></ProtectedRoute>} />
     <Route path="/optimize" element={<ProtectedRoute><Optimize /></ProtectedRoute>} />
     <Route path="/ethics" element={<ProtectedRoute><Ethics /></ProtectedRoute>} />
+    <Route path="/joir" element={<ProtectedRoute><Joir /></ProtectedRoute>} />
     <Route path="/settings" element={<ProtectedRoute><AppSettings /></ProtectedRoute>} />
     <Route path="*" element={<NotFound />} />
   </Routes>

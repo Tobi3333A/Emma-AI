@@ -3,7 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import {
-  LayoutDashboard, Search, FileCode2, TrendingUp, Shield, Settings, LogOut, ChevronRight, Menu, X
+  LayoutDashboard, Search, TrendingUp, Shield, Settings, LogOut, ChevronRight, Menu, X,
+  Sparkle
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -13,6 +14,7 @@ const navItems = [
   { icon: FileCode2, label: "Generate Site", path: "/generate" },
   { icon: TrendingUp, label: "Optimization", path: "/optimize" },
   { icon: Shield, label: "Ethics Monitor", path: "/ethics" },
+  { icon: Sparkle, label: "Joir", path: "/joir" },
   { icon: Settings, label: "Settings", path: "/settings" },
 ];
 

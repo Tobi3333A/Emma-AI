@@ -52,23 +52,38 @@ export default function Landing() {
   const navigate = useNavigate();
 
   const handleGetStarted = () => {
-    if (user) {
-      navigate("/dashboard");
-    } else {
-      navigate("/signup");
-    }
+      navigate("/pricing");
   };
 
   const handleChatInteract = () => {
-    if (user) {
-      navigate("/dashboard");
-    } else {
-      navigate("/login");
-    }
+    
   };
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      {/* Nav */}
+      <nav className="fixed top-0 inset-x-0 z-50 border-b border-border/40 backdrop-blur-md bg-background/80">
+        <div className="container flex items-center justify-between h-16">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-gradient-teal flex items-center justify-center text-background font-bold text-sm font-mono">
+              E
+            </div>
+            <span className="font-display font-bold text-lg text-foreground">EmmaAI</span>
+          </div>
+          <div className="flex items-center gap-3">
+              <>
+                <Link to="/login">
+                  <Button variant="ghost" className="text-muted-foreground hover:text-foreground text-sm">
+                    Sign In
+                  </Button>
+                </Link>
+                <Link to="/pricing">
+                  <Button className="btn-teal text-sm">Get Started</Button>
+                </Link>
+              </>
+          </div>
+        </div>
+      </nav>
       <MarketingNav />
 
       {/* Hero */}
@@ -90,7 +105,7 @@ export default function Landing() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 animate-fade-in">
             <Button onClick={handleGetStarted} className="btn-teal text-base px-8 py-3 h-auto">
-              Start Monitoring Free →
+              Start Monitoring →
             </Button>
             <Link to="/login">
               <Button variant="outline" className="border-border text-foreground hover:bg-secondary text-base px-6 py-3 h-auto">
