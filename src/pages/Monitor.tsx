@@ -16,6 +16,7 @@ const MODEL_COLORS: Record<string, string> = {
 
 const MODEL_LABELS: Record<string, string> = {
   chatgpt: "ChatGPT",
+  deepseek: "ChatGPT",
   grok: "Grok",
   claude: "Claude",
   gemini: "Gemini",
@@ -189,7 +190,7 @@ export default function Monitor() {
                   <div className="absolute top-0 left-0 right-0 h-0.5" style={{ backgroundColor: r.model_color }} />
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-2 h-2 rounded-full" style={{ backgroundColor: r.model_color }} />
-                    <span className="text-xs font-semibold text-foreground">{r.model_label}</span>
+                    <span className="text-xs font-semibold text-foreground">{MODEL_LABELS[r.model] || r.model_label}</span>
                   </div>
                   <div className="space-y-2">
                     <div className={`flex items-center gap-1.5 text-xs font-medium ${r.brand_mentioned ? "text-emerald-400" : "text-rose-400"}`}>
@@ -223,7 +224,7 @@ export default function Monitor() {
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: r.model_color }} />
-                      <span className="font-semibold text-foreground text-sm">{r.model_label} Response</span>
+                      <span className="font-semibold text-foreground text-sm">{MODEL_LABELS[r.model] || r.model_label} Response</span>
                       {r.error && <span className="text-xs text-rose-400">(Error)</span>}
                     </div>
                     <div className="flex items-center gap-3">

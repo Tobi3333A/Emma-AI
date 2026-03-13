@@ -12,6 +12,7 @@ import { TrendingUp, Eye, AlertTriangle, Users, ArrowUpRight, PlayCircle } from 
 
 const MODEL_COLORS: Record<string, string> = {
   chatgpt: "#00C2FF",
+    deepseek: "#00C2FF",
   grok: "#FF6B35",
   claude: "#C9B3FF",
   gemini: "#34D399",
@@ -83,7 +84,7 @@ export default function Dashboard() {
   const hallucinations = results.reduce((a, r) => a + ((r.accuracy_issues as any[])?.length || 0), 0);
 
   // Per-model stats
-  const modelStats = ["chatgpt", "grok", "claude", "gemini"].map(model => {
+  const modelStats = ["deepseek", "grok", "claude", "gemini"].map(model => {
     const modelResults = results.filter(r => r.ai_model === model);
     const mentions = modelResults.filter(r => r.brand_mentioned).length;
     return {
@@ -213,7 +214,7 @@ export default function Dashboard() {
                     <div className="flex items-center justify-between mb-1.5">
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full" style={{ backgroundColor: m.color }} />
-                        <span className="text-sm font-medium text-foreground">{m.label}</span>
+                        <span className="text-sm font-medium text-foreground">{MODEL_LABELS[m.model] || m.model}</span>
                       </div>
                       <span className="text-sm font-semibold" style={{ color: m.color }}>{m.rate}%</span>
                     </div>
