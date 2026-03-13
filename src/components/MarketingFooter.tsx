@@ -27,9 +27,9 @@ export default function MarketingFooter() {
           <p className="text-muted-foreground/80">Made with interdisciplinary teamwork.</p>
         </div>
 
-        <p className="text-center text-sm text-muted-foreground pt-2 border-t border-border/60">
+        {/* <p className="text-center text-sm text-muted-foreground pt-2 border-t border-border/60">
           {creators.join(" · ")}
-        </p>
+        </p> */}
       </div>
     </footer>
   );
