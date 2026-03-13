@@ -44,6 +44,9 @@ EmmaAI operates on a proprietary Perception — Reasoning — Action (PRA) cycle
 
 **Agent Orchestration:** Custom State-Based Reasoning Engine (Supabase Edge Functions + OpenAI/Gemini).
 
+## Home Page Screenshot
+![Home Page Screenshot](/public/demo-pic.png)
+
 
 ## Installation & Setup
 
