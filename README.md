@@ -1,73 +1,86 @@
-# Welcome to your Lovable project
+# EmmaAI: Agentic Brand Sovereignty Protocol
+Protect the Truth in the Post-Search Economy.
+EmmaAI is an enterprise-grade AI intelligence platform designed to monitor, verify, and enforce brand accuracy across the global AI ecosystem. As conversational interfaces (ChatGPT, Gemini, Claude) replace traditional search, EmmaAI ensures your brand's "Golden Record" remains the immutable source of truth.
 
-## Project info
+## The Core Problem
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The digital marketplace has shifted. Consumers no longer just "search"; they "ask." Traditional SEO is failing because LLMs often rely on stale web-crawled data, leading to factual hallucinations regarding pricing, availability, and technical specs. EmmaAI bridges the gap between your private database and the AI's latent space.
 
-## How can I edit this code?
+## Technical Architecture: The Sovereignty Loop
 
-There are several ways of editing your application.
+EmmaAI operates on a proprietary Perception — Reasoning — Action (PRA) cycle via the Joir Agentic Engine:
 
-**Use Lovable**
+**Perception (Synthetic Interrogation):** The agent proactively probes LLM latent spaces using high-intent "Synthetic Personas" to monitor how products are indexed and retrieved.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+**Reasoning (Semantic Verification):** Inbound AI responses are semantically audited against the brand’s Verified Product DNA (Golden Record) stored in our secure Supabase/PostgreSQL infrastructure.
 
-Changes made via Lovable will be committed automatically to this repo.
+**Action (Autonomous Remediation):** Upon detecting a "Reality Gap," EmmaAI generates Truth Patches:
 
-**Use your preferred IDE**
+**llms.txt Standard:** Specialized markdown for high-density AI crawler consumption.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+**Optimized Schema:** Instant JSON-LD injection for structured factual overrides.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+**Strategic Directives:** Data-driven marketing recommendations to regain "Recommendation Share."
 
-Follow these steps:
+## Key Features
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+**Ethics & Accuracy Monitor:** Continuous monitoring of product appearances in conversational discovery systems.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+**Hallucination Remediation:** Automated detection of misinformation with instant code-based fixes.
 
-# Step 3: Install the necessary dependencies.
-npm i
+**AEO Share of Voice:** Competitive analytics showing recommendation priority vs. competitors.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+**Joir Codex Feed:** Dynamic, AI-optimized code generator.
+
+**Legacy Data:** Replaces stale, crawled noise with verified real-time data.
+
+## Tech Stack
+
+**Frontend:** React 18, Vite, TypeScript, Tailwind CSS.
+
+**UI Components:** shadcn/ui, Lucide React, Framer Motion.
+
+**Backend & Infrastructure:** Supabase (Auth, PostgreSQL, Edge Functions).
+
+**Agent Orchestration:** Custom State-Based Reasoning Engine (Supabase Edge Functions + OpenAI/Gemini).
+
+
+## Installation & Setup
+
+**Prerequisites**
+
+Node.js (v18+)
+
+Supabase CLI (optional for local dev)
+
+Environment Variables
+
+Create a .env file in the root directory:
+
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+VITE_OPENAI_API_KEY=your_openai_key (for live agentic features)
+
+
+## Quick Start
+
+**Clone the repository**
+git clone [https://github.com/your-username/emma-ai.git](https://github.com/your-username/emma-ai.git)
+
+**Install dependencies**
+npm install
+
+**Install required animation and icon libraries**
+npm install lucide-react framer-motion
+
+**Start the Sovereignty Node**
 npm run dev
-```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Business Logic: The Split
 
-**Use GitHub Codespaces**
+Non-Paying Users: Access to "Public Truth Nodes" (Pre-seeded datasets for Home Depot/NFL).
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Enterprise Customers: Full access to the Truth Library, Private SQL/API ingestion, and Zero-Latency Patch deployment via Supabase Auth roles.
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Developed for the Battle of the Brains Finalist Case Submission 2026.
