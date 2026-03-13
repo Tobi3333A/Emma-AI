@@ -4,7 +4,8 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import {
   LayoutDashboard, Search, TrendingUp, Shield, Settings, LogOut, ChevronRight, Menu, X,
-  Sparkle
+  Sparkle,
+  FileCode2
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
