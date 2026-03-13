@@ -44,6 +44,8 @@ EmmaAI operates on a proprietary Perception — Reasoning — Action (PRA) cycle
 
 **Agent Orchestration:** Custom State-Based Reasoning Engine (Supabase Edge Functions + OpenAI/Gemini).
 
+**Deployment:** Vercel
+
 ## Home Page Screenshot
 ![Home Page Screenshot](/public/demo-pic.png)
 
@@ -61,23 +63,39 @@ Environment Variables
 Create a .env file in the root directory:
 
 VITE_SUPABASE_URL=your_supabase_project_url<br />
-VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_anon_key<br />
+VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key<br />
 VITE_OPENAI_API_KEY=your_openai_key (for live agentic features)
+
+
+## How To Navigate
+- Click [here](https://emma-ai-one.vercel.app/) to access our website.
+- Click "Get Started" to go the the pricing page.
+- Click "Start Free Trial" to sign up.
+- Make your company's profile.
+- Start exploring and using the dashboard.
 
 
 ## Quick Start
 
 **Clone the repository**<br />
-git clone [https://github.com/Tobi3333A/XULA_TECH_03132026.git](https://github.com/Tobi3333A/XULA_TECH_03132026.git)
+```bash
+git clone https://github.com/Tobi3333A/XULA_TECH_03132026.git
+```
 
 **Install dependencies**<br />
+```bash
 npm install
+```
 
 **Install required animation and icon libraries**<br />
+```bash
 npm install lucide-react framer-motion
+```
 
 **Start the Sovereignty Node**<br />
+```bash
 npm run dev
+```
 
 
 ## Business Logic: The Split
@@ -85,5 +103,7 @@ npm run dev
 Non-Paying Users: Access to "Public Truth Nodes".
 
 Enterprise Customers: Full access to the Truth Library, Private SQL/API ingestion, and Zero-Latency Patch deployment via Supabase Auth roles.
+
+**Note:** We did not fully set up our payment system, yet.
 
 Developed for the Battle of the Brains Finalist Case Submission 2026.
