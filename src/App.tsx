@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
+import ContentPlanner from "./pages/ContentPlanner";
 import Monitor from "./pages/Monitor";
 import Generate from "./pages/Generate";
 import Optimize from "./pages/Optimize";
@@ -43,6 +44,7 @@ const AppRoutes = () => (
     <Route path="/signup" element={<Signup />} />
     <Route path="/onboarding" element={<ProtectedRoute><Onboarding /></ProtectedRoute>} />
     <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+    <Route path="/content-planner" element={<ProtectedRoute><ContentPlanner /></ProtectedRoute>} />
     <Route path="/monitor" element={<ProtectedRoute><Monitor /></ProtectedRoute>} />
     <Route path="/generate" element={<ProtectedRoute><Generate /></ProtectedRoute>} />
     <Route path="/optimize" element={<ProtectedRoute><Optimize /></ProtectedRoute>} />

@@ -4,12 +4,13 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import {
   LayoutDashboard, Search, TrendingUp, Shield, Settings, LogOut, ChevronRight, Menu, X,
-  Sparkle, FileCode2
+  Sparkle, FileCode2, CalendarRange
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
+  { icon: CalendarRange, label: "Content Planner", path: "/content-planner" },
   { icon: Search, label: "Run Query", path: "/monitor" },
   { icon: FileCode2, label: "Generate Site", path: "/generate" },
   { icon: TrendingUp, label: "Optimization", path: "/optimize" },
