@@ -60,29 +60,29 @@ Environment Variables
 
 Create a .env file in the root directory:
 
-VITE_SUPABASE_URL=your_supabase_project_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+VITE_SUPABASE_URL=your_supabase_project_url<br />
+VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_anon_key<br />
 VITE_OPENAI_API_KEY=your_openai_key (for live agentic features)
 
 
 ## Quick Start
 
-**Clone the repository**
-git clone [https://github.com/your-username/emma-ai.git](https://github.com/your-username/emma-ai.git)
+**Clone the repository**<br />
+git clone [https://github.com/Tobi3333A/XULA_TECH_03132026.git](https://github.com/Tobi3333A/XULA_TECH_03132026.git)
 
-**Install dependencies**
+**Install dependencies**<br />
 npm install
 
-**Install required animation and icon libraries**
+**Install required animation and icon libraries**<br />
 npm install lucide-react framer-motion
 
-**Start the Sovereignty Node**
+**Start the Sovereignty Node**<br />
 npm run dev
 
 
 ## Business Logic: The Split
 
-Non-Paying Users: Access to "Public Truth Nodes" (Pre-seeded datasets for Home Depot/NFL).
+Non-Paying Users: Access to "Public Truth Nodes".
 
 Enterprise Customers: Full access to the Truth Library, Private SQL/API ingestion, and Zero-Latency Patch deployment via Supabase Auth roles.
 
