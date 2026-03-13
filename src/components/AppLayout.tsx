@@ -62,25 +62,6 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       </nav>
 
       <div className="p-3 border-t border-sidebar-border space-y-3">
-        <div>
-          <div className="text-xs font-semibold text-muted-foreground mb-2 px-3">Links</div>
-          <div className="space-y-0.5">
-            <Link
-              to="/"
-              onClick={() => setMobileOpen(false)}
-              className="nav-item block"
-            >
-              <span>Home</span>
-            </Link>
-            <Link
-              to="/blog"
-              onClick={() => setMobileOpen(false)}
-              className="nav-item block"
-            >
-              <span>Blog</span>
-            </Link>
-          </div>
-        </div>
         <div className="rounded-lg bg-secondary/50 p-3 mb-3">
           <div className="text-xs text-muted-foreground mb-1">Signed in as</div>
           <div className="text-xs font-medium text-foreground truncate">{user?.email}</div>
