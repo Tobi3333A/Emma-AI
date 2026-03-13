@@ -4,6 +4,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { useAuth } from "@/contexts/AuthContext";
 import { Send } from "lucide-react";
 import heroDashboard from "@/assets/hero-dashboard.png";
+import MarketingNav from "@/components/MarketingNav";
+import MarketingFooter from "@/components/MarketingFooter";
 
 const features = [
   {
@@ -82,6 +84,7 @@ export default function Landing() {
           </div>
         </div>
       </nav>
+      <MarketingNav />
 
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
@@ -245,18 +248,7 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-8">
-        <div className="container flex items-center justify-between text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded bg-gradient-teal flex items-center justify-center text-background text-xs font-bold font-mono">
-              E
-            </div>
-            <span className="font-display font-semibold text-foreground">EmmaAI</span>
-          </div>
-          <p>© 2026 EmmaAI. Powering AI visibility for the modern enterprise.</p>
-        </div>
-      </footer>
+      <MarketingFooter />
     </div>
   );
 }

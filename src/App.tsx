@@ -11,11 +11,14 @@ import Signup from "./pages/Signup";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
 import Monitor from "./pages/Monitor";
+import Generate from "./pages/Generate";
 import Optimize from "./pages/Optimize";
 import Ethics from "./pages/Ethics";
 import Joir from "./pages/Joir";
 import AppSettings from "./pages/AppSettings";
 import NotFound from "./pages/NotFound";
+import BlogIndex from "./pages/BlogIndex";
+import BlogPost from "./pages/BlogPost";
 
 const queryClient = new QueryClient();
 
@@ -34,11 +37,14 @@ const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Landing />} />
     <Route path="/pricing" element={<Pricing />} />
+    <Route path="/blog" element={<BlogIndex />} />
+    <Route path="/blog/:slug" element={<BlogPost />} />
     <Route path="/login" element={<Login />} />
     <Route path="/signup" element={<Signup />} />
     <Route path="/onboarding" element={<ProtectedRoute><Onboarding /></ProtectedRoute>} />
     <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
     <Route path="/monitor" element={<ProtectedRoute><Monitor /></ProtectedRoute>} />
+    <Route path="/generate" element={<ProtectedRoute><Generate /></ProtectedRoute>} />
     <Route path="/optimize" element={<ProtectedRoute><Optimize /></ProtectedRoute>} />
     <Route path="/ethics" element={<ProtectedRoute><Ethics /></ProtectedRoute>} />
     <Route path="/joir" element={<ProtectedRoute><Joir /></ProtectedRoute>} />
