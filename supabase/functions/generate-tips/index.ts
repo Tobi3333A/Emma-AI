@@ -2,7 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
 serve(async (req) => {
@@ -11,65 +11,49 @@ serve(async (req) => {
   try {
     const { company_name, industry, products, competitors, website_url } = await req.json();
 
-    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
-    if (!LOVABLE_API_KEY) {
-      return new Response(JSON.stringify({ error: "LOVABLE_API_KEY not configured" }), {
-        status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
+    // 1. CHANGE: Use a direct API Key (OpenAI example)
+    const apiKey = Deno.env.get("OPENAI_API_KEY"); 
+    if (!apiKey) throw new Error("API Key not configured");
 
-    const prompt = `You are an AI visibility expert helping a business improve how AI assistants find and recommend their products.
+    const prompt = `...your prompt logic...`; // Keep your existing prompt logic
 
-Company: ${company_name}
-Industry: ${industry || "not specified"}
-Website: ${website_url || "not specified"}
-Products: ${(products || []).map((p: any) => p.name).join(", ") || "not specified"}
-Competitors: ${(competitors || []).map((c: any) => c.name).join(", ") || "none"}
-
-Generate exactly 6 specific, actionable optimization recommendations to help this company appear more prominently and accurately in AI assistant responses.
-
-For each recommendation provide:
-- category: one of [structured_data, content, llms_txt, technical, reviews, comparison]
-- priority: one of [high, medium, low]
-- title: short action title (under 10 words)
-- description: specific actionable description (2-3 sentences)
-
-Respond ONLY with valid JSON array: [{"category":"...","priority":"...","title":"...","description":"..."}]`;
-
-    const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+    // 2. CHANGE: Point to the official API endpoint instead of ai.gateway.lovable.dev
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${LOVABLE_API_KEY}`,
+        "Authorization": `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "google/gemini-3-flash-preview",
-        messages: [{ role: "user", content: prompt }],
+        model: "gpt-4o-mini", // Or your preferred model
+        messages: [
+          { role: "system", content: "You are a JSON-only assistant." },
+          { role: "user", content: prompt }
+        ],
+        response_format: { type: "json_object" }, // Ensures valid JSON output
         temperature: 0.3,
       }),
     });
 
     if (!response.ok) {
-      if (response.status === 429) throw new Error("Rate limit exceeded. Please try again later.");
-      if (response.status === 402) throw new Error("Payment required. Please add credits to your workspace.");
-      throw new Error(`AI gateway error [${response.status}]`);
+      const errorData = await response.json();
+      throw new Error(`AI Provider Error: ${errorData.error?.message || response.statusText}`);
     }
 
     const data = await response.json();
     const content = data.choices?.[0]?.message?.content || "[]";
     
-    // Extract JSON from response
-    const jsonMatch = content.match(/\[[\s\S]*\]/);
-    const tips = jsonMatch ? JSON.parse(jsonMatch[0]) : [];
+    // Parse the JSON (OpenAI's json_object mode makes this much safer)
+    const parsedData = JSON.parse(content);
+    const tips = Array.isArray(parsedData) ? parsedData : (parsedData.tips || []);
 
     return new Response(JSON.stringify({ tips }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
-  } catch (e: unknown) {
-    console.error("generate-tips error:", e);
-    const message = e instanceof Error ? e.message : "Unknown error";
-    return new Response(JSON.stringify({ error: message }), {
+
+  } catch (e: any) {
+    console.error("Function error:", e);
+    return new Response(JSON.stringify({ error: e.message }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });

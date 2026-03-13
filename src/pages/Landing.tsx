@@ -243,7 +243,7 @@ export default function Landing() {
             Set up monitoring in minutes. Get your first AI visibility report today.
           </p>
           <Button onClick={handleGetStarted} className="btn-teal text-base px-10 py-3 h-auto">
-            Start Monitoring Free →
+            Start Monitoring →
           </Button>
         </div>
       </section>
