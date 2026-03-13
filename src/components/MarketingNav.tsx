@@ -1,10 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 
 export default function MarketingNav() {
   const { user } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const isBlog = location.pathname === "/blog" || location.pathname.startsWith("/blog/");
 
   return (
     <nav className="fixed top-0 inset-x-0 z-50 border-b border-border/40 backdrop-blur-md bg-background/80">
@@ -17,6 +19,13 @@ export default function MarketingNav() {
         </Link>
 
         <div className="flex items-center gap-2 sm:gap-3">
+          {isBlog && (
+            <Link to="/">
+              <Button variant="ghost" className="text-primary hover:text-primary/90 text-sm font-medium">
+                Home
+              </Button>
+            </Link>
+          )}
           <Link to="/blog">
             <Button variant="ghost" className="text-muted-foreground hover:text-foreground text-sm">
               Blog

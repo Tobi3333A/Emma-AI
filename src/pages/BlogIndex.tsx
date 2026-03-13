@@ -22,7 +22,10 @@ export default function BlogIndex() {
       <MarketingNav />
 
       <header className="container pt-28 pb-10 max-w-3xl">
-        <h1 className="font-display text-4xl font-bold tracking-tight text-foreground">
+        <Link to="/" className="text-sm text-primary font-medium hover:underline">
+          ← Home
+        </Link>
+        <h1 className="font-display text-4xl font-bold tracking-tight text-foreground mt-4">
           The Blog
         </h1>
         <p className="text-muted-foreground mt-2">

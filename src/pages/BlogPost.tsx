@@ -41,9 +41,14 @@ export default function BlogPost() {
       <MarketingNav />
 
       <header className="container pt-28 pb-2 max-w-3xl">
-        <Link to="/blog" className="text-sm text-primary font-medium hover:underline">
-          Back to Blog
-        </Link>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+          <Link to="/" className="text-primary font-medium hover:underline">
+            ← Home
+          </Link>
+          <Link to="/blog" className="text-primary font-medium hover:underline">
+            Back to Blog
+          </Link>
+        </div>
       </header>
 
       <main className="container pb-24 max-w-3xl">
